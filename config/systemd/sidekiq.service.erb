@@ -1,0 +1,13 @@
+t]
+Description = <%= fetch(:application) %> application server
+
+[Service]
+Environment = RAILS_ENV=<%= fetch(:rails_env) %>
+Environment = PWD=<%= current_path %>
+WorkingDirectory = <%= current_path %>
+ExecStart=/home/ubuntu/.rbenv/bin/rbenv exec bundle exec sidekiq -C <%= current_path %>/config/sidekiq.yml
+User = ubuntu
+Group = ubuntu
+
+[Install]
+WantedBy = multi-user.target

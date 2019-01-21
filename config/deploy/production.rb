@@ -6,7 +6,7 @@ set :default_env, {
   'app_dir' => '#{fetch(:deploy_to)}',
   'RAILS_ENV' => 'production'
 }
-server '13.250.112.165', user: 'ubuntu', roles: %w{web app db}, primary: true
+server '13.229.119.187', user: 'ubuntu', roles: %w{web app db}, primary: true
 
 set :rails_env, 'production'
 
